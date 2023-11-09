@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TI4 Buy Tool</title>
+    <style>
+        /* Updated CSS styling with white text color */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: url('https://i.imgur.com/DelPCGS.jpeg');
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            /* Black background with some transparency */
+            padding: 20px;
+            border: 2px solid black;
+            /* Black border around the container */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        .category {
+            margin: 10px;
+        }
+
+        .checkboxes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2,
+        label {
+            color: white;
+            /* White text color for headings and labels */
+        }
+
+        select,
+        input {
+            background: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black background for input elements */
+            color: white;
+            /* White text color for input elements */
+            border: 1px solid white;
+            /* White border for input elements */
+        }
+
+        .buy-button {
+            background-color: yellow;
+            /* Yellow background for the Buy button */
+        }
+
+        .tally-box {
+            background-color: yellow;
+            /* Yellow background for the tally box */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .tally {
+            font-size: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TI4 Buy Tool</h1>
+    <div class="container">
+        <div class="category">
+            <div id="infantry">
+                <label for="infantryInput">Infantry:</label>
+                <select id="infantryInput" name="infantryInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+
+            <div id="fighter">
+                <label for="fighterInput">Fighter:</label>
+                <select id="fighterInput" name="fighterInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="category">
+            <div id="mech">
+                <label for="mechInput">Mech:</label>
+                <select id="mechInput" name="mechInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="category">
+            <div id="destroyer">
+                <label for="destroyerInput">Destroyer:</label>
+                <select id="destroyerInput" name="destroyerInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div id="cruiser">
+                <label for="cruiserInput">Cruiser:</label>
+                <select id="cruiserInput" name="cruiserInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="category">
+            <div id="carrier">
+                <label for="carrierInput">Carrier:</label>
+                <select id="carrierInput" name="carrierInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div id="dreadnaught">
+                <label for="dreadnaughtInput">Dreadnaught:</label>
+                <select id="dreadnaughtInput" name="dreadnaughtInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="category">
+            <div id="warsun">
+                <label for="warsunInput">War Sun:</label>
+                <select id="warsunInput" name="warsunInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <div id="flagship">
+                <label for="flagshipInput">Flagship:</label>
+                <select id="flagshipInput" name="flagshipInput">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="technologyPrimary">Technology Primary</button>
+        <button id="technologySecondary">Technology Secondary</button>
+        <div>
+            <input type="text" id="miscellaneousInput" placeholder="Enter amount">
+            <button id="miscellaneousButton" style="background-color: green;">Miscellaneous</button>
+        </div>
+    </div>
+
+    <div class="checkboxes">
+        <label for="sarweenToolsCheckbox">Sarween Tools:</label>
+        <input type="checkbox" id="sarweenToolsCheckbox">
+
+        <label for="warMachineCheckbox">War Machine:</label>
+        <input type="checkbox" id="warMachineCheckbox">
+
+        <label for="regulatedConscriptionCheckbox">Regulated Conscription:</label>
+        <input type="checkbox" id="regulatedConscriptionCheckbox">
+    </div>
+
+    <h2>Total Units Bought: <span id="totalUnitsBought">0</span></h2>
+    <h2>Total R/TGs: <span id="totalCost">0</span></h2>
+
+    <button id="buyButton" class="buy-button">Buy</button>
+
+    <div class="tally-box">
+        <div class="tally">Total Units Bought this game: <span id="totalUnitsBoughtGame">0</span></div>
+        <div class="tally">Total Amount Spent this game: <span id="totalAmountSpentGame">0</span></div>
+    </div>
+
+    <script>
+        // JavaScript code to handle input changes and calculate the total
+        const categoryCosts = {
+            "infantryInput": 1,
+            "fighterInput": 1,
+            "mechInput": 2,
+            "destroyerInput": 1,
+            "cruiserInput": 2,
+            "carrierInput": 3,
+            "dreadnaughtInput": 4,
+            "warsunInput": 12,
+            "flagshipInput": 8,
+        };
+
+        const totalUnitsElement = document.getElementById("totalUnitsBought");
+        const totalCostElement = document.getElementById("totalCost");
+        const totalUnitsBoughtGameElement = document.getElementById("totalUnitsBoughtGame");
+        const totalAmountSpentGameElement = document.getElementById("totalAmountSpentGame");
+        const sarweenToolsCheckbox = document.getElementById("sarweenToolsCheckbox");
+        const warMachineCheckbox = document.getElementById("warMachineCheckbox");
+        const regulatedConscriptionCheckbox = document.getElementById("regulatedConscriptionCheckbox");
+
+        const initialQuantities = {};
+
+        for (const inputId in categoryCosts) {
+            const input = document.getElementById(inputId);
+            initialQuantities[inputId] = parseInt(input.value || 0);
+            input.addEventListener('change', updateTotal);
+        }
+
+        sarweenToolsCheckbox.addEventListener('click', updateTotal);
+        warMachineCheckbox.addEventListener('click', updateTotal);
+        regulatedConscriptionCheckbox.addEventListener('click', updateTotal);
+
+        document.querySelectorAll('.checkboxes input').forEach(checkbox => {
+            checkbox.addEventListener('click', updateTotal);
+        });
+
+        function updateTotal() {
+            let totalUnitsBought = 0;
+            let totalCost = 0;
+
+            for (const inputId in categoryCosts) {
+                const quantity = parseInt(document.getElementById(inputId).value || 0);
+                totalUnitsBought += quantity;
+
+                if (inputId === "infantryInput" || inputId === "fighterInput" || inputId === "mechInput") {
+                    // Update the cost for 'Infantry', 'Fighter', and 'Mech' immediately based on 'Regulated Conscription'
+                    if (regulatedConscriptionCheckbox.checked) {
+                        categoryCosts[inputId] = 1;
+                        totalCost += quantity; // Display the quantity directly without multiplying by cost
+                    } else {
+                        const selectedRange = Math.ceil(quantity / 2);
+                        totalCost += selectedRange * categoryCosts[inputId];
+                    }
+                } else {
+                    totalCost += quantity * categoryCosts[inputId];
+                }
+            }
+
+            if (sarweenToolsCheckbox.checked) {
+                totalCost = Math.max(totalCost - 1, 0);
+            }
+            if (warMachineCheckbox.checked) {
+                totalCost = Math.max(totalCost - 1, 0);
+            }
+
+            totalUnitsElement.textContent = totalUnitsBought;
+            totalCostElement.textContent = totalCost;
+        }
+
+        const buyButton = document.getElementById("buyButton");
+        buyButton.addEventListener('click', buyUnits);
+
+        let totalUnitsBoughtGame = 0;
+        let totalAmountSpentGame = 0;
+
+        function buyUnits() {
+            totalUnitsBoughtGame += parseInt(totalUnitsElement.textContent);
+            totalAmountSpentGame += parseInt(totalCostElement.textContent);
+
+            totalUnitsBoughtGameElement.textContent = totalUnitsBoughtGame;
+            totalAmountSpentGameElement.textContent = totalAmountSpentGame;
+
+            for (const inputId in categoryCosts) {
+                const input = document.getElementById(inputId);
+                input.value = "0";
+            }
+
+            // Only uncheck the 'War Machine' checkbox when the "Buy" button is pressed
+            warMachineCheckbox.checked = false;
+
+            for (const inputId in categoryCosts) {
+                const input = document.getElementById(inputId);
+                input.value = "0";
+            }
+
+            // Only uncheck the 'War Machine' checkbox when the "Buy" button is pressed
+            warMachineCheckbox.checked = false;
+
+            // Uncheck 'Regulated Conscription' when the "Buy" button is pressed
+            regulatedConscriptionCheckbox.checked = false;
+
+            updateTotal();
+        }
+        const technologyPrimaryButton = document.getElementById("technologyPrimary");
+        const technologySecondaryButton = document.getElementById("technologySecondary");
+
+        technologyPrimaryButton.addEventListener('click', addTechnologyPrimaryCost);
+        technologySecondaryButton.addEventListener('click', addTechnologySecondaryCost);
+
+        function addTechnologyPrimaryCost() {
+            totalAmountSpentGame += 6;
+            totalAmountSpentGameElement.textContent = totalAmountSpentGame;
+        }
+
+        function addTechnologySecondaryCost() {
+            totalAmountSpentGame += 4;
+            totalAmountSpentGameElement.textContent = totalAmountSpentGame;
+        }
+
+        const miscellaneousInput = document.getElementById("miscellaneousInput");
+        const miscellaneousButton = document.getElementById("miscellaneousButton");
+
+        miscellaneousButton.addEventListener('click', addMiscellaneousCost);
+
+        function addMiscellaneousCost() {
+            const amount = parseInt(miscellaneousInput.value) || 0;
+            totalAmountSpentGame += amount;
+            totalAmountSpentGameElement.textContent = totalAmountSpentGame;
+            miscellaneousInput.value = "";
+        }
+    </script>
+</body>
+
+</html>
